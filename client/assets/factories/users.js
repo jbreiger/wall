@@ -28,8 +28,10 @@ myApp.factory('usersFactory', ['$http', function($http) {
       })
     };
     
-    this.index= function(){
-    	console.log('test')
+    this.index= function(newUser){
+    	$http.post('/users', newUser).then(function(returned_data){
+        console.log(returned_data);
+      });  
     }
 
 

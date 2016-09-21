@@ -19,9 +19,19 @@ function UsersController(){
   //   // res.json({placeholder: friend});
   // };
   this.create = function(req,res){
-    console.log(req.body, '*******************');
+    console.log(req.body.username, '*******************');
     console.log('in the create of the server controller');
     var user= new User(req.body);
+    // var check= User.findOne({username: req.body.username}, function(err, data){
+    //   if(err){
+    //     console.log('error')
+    //     return res.json({err:err})
+    //   }else{
+    //     console.log(data);
+    //     return res.json({data: data})
+    //   }
+    // })
+    // console.log(check);
     user.save(function(err,user){
       if (err){
         console.log("in the errors")

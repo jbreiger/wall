@@ -5,9 +5,10 @@ myApp.controller('indexController', ['$scope','usersFactory', '$routeParams', fu
     we just run the friendsFactory method directly.
   */
 
-  $scope.test =function(){
-    console.log('in the index')
-    usersFactory.index();
+  $scope.index =function(){
+    form_data= $scope.newUser;
+    console.log(form_data);
+    usersFactory.index(form_data);
   }
 // $scope.show= function () {
 //   var id= $routeParams.id;
